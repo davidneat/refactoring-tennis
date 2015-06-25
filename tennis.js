@@ -12,6 +12,23 @@ TennisGame.prototype.wonPoint = function(playerName) {
         this.m_score2 += 1;
 };
 
+function getScoreName(tempScore, score) {
+    switch (tempScore) {
+        case 0:
+            score += "Love";
+            break;
+        case 1:
+            score += "Fifteen";
+            break;
+        case 2:
+            score += "Thirty";
+            break;
+        case 3:
+            score += "Forty";
+            break;
+    }
+    return score;
+}
 TennisGame.prototype.getScore = function() {
     var score = "";
     var tempScore = 0;
@@ -43,20 +60,7 @@ TennisGame.prototype.getScore = function() {
                 score += "-";
                 tempScore = this.m_score2;
             }
-            switch (tempScore) {
-                case 0:
-                    score += "Love";
-                    break;
-                case 1:
-                    score += "Fifteen";
-                    break;
-                case 2:
-                    score += "Thirty";
-                    break;
-                case 3:
-                    score += "Forty";
-                    break;
-            }
+            score = getScoreName(tempScore, score);
         }
     }
     return score;
