@@ -15,18 +15,19 @@ function getScoreName(tempScore, score) {
     return score += scoreMap[tempScore];
 }
 function getEqualScoreName(score) {
+    var scoreMap = ['Love-All', 'Fifteen-All', 'Thirty-All', 'Deuce'];
     switch (this.m_score1) {
         case 0:
-            score = "Love-All";
+            score = scoreMap[0];
             break;
         case 1:
-            score = "Fifteen-All";
+            score = scoreMap[1];
             break;
         case 2:
-            score = "Thirty-All";
+            score = scoreMap[2];
             break;
         default:
-            score = "Deuce";
+            score = scoreMap[3];
             break;
     }
     return score;
