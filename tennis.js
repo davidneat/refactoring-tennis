@@ -15,22 +15,8 @@ function getScoreName(tempScore, score) {
     return score += scoreMap[tempScore];
 }
 function getEqualScoreName(score) {
-    var scoreMap = ['Love-All', 'Fifteen-All', 'Thirty-All', 'Deuce'];
-    switch (this.m_score1) {
-        case 0:
-            score = scoreMap[0];
-            break;
-        case 1:
-            score = scoreMap[1];
-            break;
-        case 2:
-            score = scoreMap[2];
-            break;
-        default:
-            score = scoreMap[3];
-            break;
-    }
-    return score;
+    var scoreMap = ['Love-All', 'Fifteen-All', 'Thirty-All'];
+    return scoreMap[this.m_score1] || 'Deuce';
 }
 function getOverFour(score) {
     var minusResult = this.m_score1 - this.m_score2;
