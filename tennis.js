@@ -11,18 +11,19 @@ TennisGame.prototype.wonPoint = function(playerName) {
 };
 
 function getScoreName(tempScore, score) {
+    var scoreMap = ['Love', 'Fifteen', 'Thirty', 'Forty'];
     switch (tempScore) {
         case 0:
-            score += "Love";
+            score += scoreMap[0];
             break;
         case 1:
-            score += "Fifteen";
+            score += scoreMap[1];
             break;
         case 2:
-            score += "Thirty";
+            score += scoreMap[2];
             break;
         case 3:
-            score += "Forty";
+            score += scoreMap[3];
             break;
     }
     return score;
