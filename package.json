@@ -1,0 +1,32 @@
+{
+  "name": "refactoring-tennis",
+  "version": "1.0.0",
+  "description": "Refactoring Tennis",
+  "main": "tennis.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register ./*Spec.js",
+    "watch": "mocha --watch --compilers js:babel-core/register ./*Spec.js",
+    "cover": "rimraf coverage; istanbul cover ./node_modules/.bin/_mocha -- --compilers js:babel-core/register ./*Spec.js",
+    "serve": "npm run cover; http-server ./coverage/lcov-report/ -o -a localhost -p 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidneat/refactoring-tennis.git"
+  },
+  "keywords": [
+    "Refactoring"
+  ],
+  "author": "davidneat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidneat/refactoring-tennis/issues"
+  },
+  "homepage": "https://github.com/davidneat/refactoring-tennis#readme",
+  "devDependencies": {
+    "babel-core": "^5.6.7",
+    "http-server": "^0.8.0",
+    "istanbul": "^0.3.16",
+    "mocha": "^2.2.5",
+    "rimraf": "^2.4.0"
+  }
+}
