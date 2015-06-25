@@ -1,5 +1,11 @@
 # Refactoring Tennis
 
+## Installation
+
+```
+npm install
+```
+
 ## Tests
 
 ```
