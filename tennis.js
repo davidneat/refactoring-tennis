@@ -14,7 +14,7 @@ function getScoreName(tempScore, score) {
     var scoreMap = ['Love', 'Fifteen', 'Thirty', 'Forty'];
     return score += scoreMap[tempScore];
 }
-function getEqualScoreName(score) {
+function getEqualScoreName() {
     var scoreMap = ['Love-All', 'Fifteen-All', 'Thirty-All'];
     return scoreMap[this.m_score1] || 'Deuce';
 }
