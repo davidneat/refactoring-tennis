@@ -26,4 +26,4 @@ npm run cover
 npm run serve
 ```
 
-**The original tennis logic is a fork from (Emily Bache)[https://github.com/emilybache/Tennis-Refactoring-Kata/].**
+**The original tennis logic is a fork from [Emily Bache](https://github.com/emilybache/Tennis-Refactoring-Kata/).**
