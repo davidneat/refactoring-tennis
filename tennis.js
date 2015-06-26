@@ -36,8 +36,12 @@ TennisGame.prototype.isOverFour = function() {
     return this.m_score1 >= 4 || this.m_score2 >= 4;
 };
 
+TennisGame.prototype.isEqualScore = function() {
+    return this.m_score1 === this.m_score2;
+};
+
 TennisGame.prototype.getScore = function() {
-    if (this.m_score1 === this.m_score2) {
+    if (this.isEqualScore()) {
         return this.getEqualScoreName();
     } else if (this.isOverFour()) {
         return this.getOverFourName();
