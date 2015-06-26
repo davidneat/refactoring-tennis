@@ -16,10 +16,7 @@ TennisGame.prototype.getEqualScoreName = function() {
 };
 
 TennisGame.prototype.getAdvantageName = function(minusResult) {
-    if(minusResult === 1) {
-        return 'Advantage player1';
-    }
-    return 'Advantage player2';
+    return minusResult === 1 ? 'Advantage player1' : 'Advantage player2';
 };
 
 TennisGame.prototype.getWinnerName = function(minusResult) {
