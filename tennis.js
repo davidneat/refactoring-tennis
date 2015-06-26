@@ -18,7 +18,7 @@ TennisGame.prototype.getEqualScoreName = function() {
     return ['Love-All', 'Fifteen-All', 'Thirty-All'][this.m_score1] || 'Deuce';
 };
 
-TennisGame.prototype.getAdvantage = function(minusResult) {
+TennisGame.prototype.getAdvantageName = function(minusResult) {
     if(minusResult === 1) {
         return 'Advantage player1';
     }
@@ -38,7 +38,7 @@ TennisGame.prototype.isAdvantage = function(minusResult) {
 
 TennisGame.prototype.getOverFour = function() {
     var minusResult = this.m_score1 - this.m_score2;
-    return this.isAdvantage(minusResult) ? this.getAdvantage(minusResult) : this.getWinner(minusResult);
+    return this.isAdvantage(minusResult) ? this.getAdvantageName(minusResult) : this.getWinner(minusResult);
 };
 
 TennisGame.prototype.getScore = function() {
