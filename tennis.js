@@ -10,10 +10,11 @@ TennisGame.prototype.wonPoint = function(playerName) {
         this.m_score2 += 1;
 };
 
-function getScoreName(tempScore, score) {
+TennisGame.prototype.getScoreName = function(tempScore, score) {
     var scoreMap = ['Love', 'Fifteen', 'Thirty', 'Forty'];
     return score += scoreMap[tempScore];
-}
+};
+
 TennisGame.prototype.getEqualScoreName = function() {
     var scoreMap = ['Love-All', 'Fifteen-All', 'Thirty-All'];
     return scoreMap[this.m_score1] || 'Deuce';
@@ -42,7 +43,7 @@ TennisGame.prototype.getScore = function() {
                 score += "-";
                 tempScore = this.m_score2;
             }
-            score = getScoreName(tempScore, score);
+            score = this.getScoreName(tempScore, score);
         }
     }
     return score;
