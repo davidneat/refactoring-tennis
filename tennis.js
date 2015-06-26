@@ -7,8 +7,8 @@ TennisGame.prototype.wonPoint = function(playerName) {
     playerName === "player1" ? this.scorePlayer1 += 1 : this.scorePlayer2 += 1;
 };
 
-TennisGame.prototype.getScoreName = function(tempScore) {
-    return ['Love', 'Fifteen', 'Thirty', 'Forty'][tempScore];
+TennisGame.prototype.getScoreName = function(scorePlayer) {
+    return ['Love', 'Fifteen', 'Thirty', 'Forty'][scorePlayer];
 };
 
 TennisGame.prototype.getEqualScoreName = function() {
