@@ -41,10 +41,14 @@ TennisGame.prototype.getOverFour = function() {
     return this.isAdvantage(minusResult) ? this.getAdvantageName(minusResult) : this.getWinnerName(minusResult);
 };
 
+TennisGame.prototype.isOverFour = function() {
+    return this.m_score1 >= 4 || this.m_score2 >= 4;
+};
+
 TennisGame.prototype.getScore = function() {
     if (this.m_score1 === this.m_score2) {
         return this.getEqualScoreName();
-    } else if (this.m_score1 >= 4 || this.m_score2 >= 4) {
+    } else if (this.isOverFour()) {
         return this.getOverFour();
     }
     return this.getScoreName(this.m_score1) + "-" + this.getScoreName(this.m_score2);
