@@ -15,8 +15,7 @@ TennisGame.prototype.getScoreName = function(tempScore) {
 };
 
 TennisGame.prototype.getEqualScoreName = function() {
-    var scoreMap = ['Love-All', 'Fifteen-All', 'Thirty-All'];
-    return scoreMap[this.m_score1] || 'Deuce';
+    return ['Love-All', 'Fifteen-All', 'Thirty-All'][this.m_score1] || 'Deuce';
 };
 
 TennisGame.prototype.getOverFour = function(score) {
