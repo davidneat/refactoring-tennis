@@ -18,7 +18,7 @@ TennisGame.prototype.getEqualScoreName = function() {
     return ['Love-All', 'Fifteen-All', 'Thirty-All'][this.m_score1] || 'Deuce';
 };
 
-TennisGame.prototype.getOverFour = function(score) {
+TennisGame.prototype.getOverFour = function() {
     var minusResult = this.m_score1 - this.m_score2;
     if (minusResult === 1) {
         return 'Advantage player1';
