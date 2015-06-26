@@ -25,7 +25,7 @@ TennisGame.prototype.getAdvantageName = function(minusResult) {
     return 'Advantage player2';
 };
 
-TennisGame.prototype.getWinner = function(minusResult) {
+TennisGame.prototype.getWinnerName = function(minusResult) {
     if (minusResult >= 2) {
         return 'Win for player1';
     }
@@ -38,7 +38,7 @@ TennisGame.prototype.isAdvantage = function(minusResult) {
 
 TennisGame.prototype.getOverFour = function() {
     var minusResult = this.m_score1 - this.m_score2;
-    return this.isAdvantage(minusResult) ? this.getAdvantageName(minusResult) : this.getWinner(minusResult);
+    return this.isAdvantage(minusResult) ? this.getAdvantageName(minusResult) : this.getWinnerName(minusResult);
 };
 
 TennisGame.prototype.getScore = function() {
