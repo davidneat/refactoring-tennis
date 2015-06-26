@@ -1,4 +1,4 @@
-var TennisGame = function(player1Name, player2Name) {
+var TennisGame = function() {
     this.scorePlayer1 = 0;
     this.scorePlayer2 = 0;
 };

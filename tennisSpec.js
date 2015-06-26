@@ -51,7 +51,7 @@ function incrementScore(game, player, amount) {
 describe('Tennis', () => {
     for(let score of allScores) {
         it(score[2], () => {
-            let game = new TennisGame('player1', 'player2');
+            let game = new TennisGame();
 
             incrementScore(game, 'player1', score[0]);
             incrementScore(game, 'player2', score[1]);
