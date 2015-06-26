@@ -14,10 +14,10 @@ function getScoreName(tempScore, score) {
     var scoreMap = ['Love', 'Fifteen', 'Thirty', 'Forty'];
     return score += scoreMap[tempScore];
 }
-function getEqualScoreName() {
+TennisGame.prototype.getEqualScoreName = function() {
     var scoreMap = ['Love-All', 'Fifteen-All', 'Thirty-All'];
     return scoreMap[this.m_score1] || 'Deuce';
-}
+};
 function getOverFour(score) {
     var minusResult = this.m_score1 - this.m_score2;
     if (minusResult === 1) score = "Advantage player1";
@@ -30,7 +30,7 @@ TennisGame.prototype.getScore = function() {
     var score = "";
     var tempScore = 0;
     if (this.m_score1 === this.m_score2) {
-        score = getEqualScoreName.call(this, score);
+        score = this.getEqualScoreName();
     } else if (this.m_score1 >= 4 || this.m_score2 >= 4) {
         score = getOverFour.call(this, score);
     } else {
