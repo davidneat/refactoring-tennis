@@ -18,13 +18,19 @@ TennisGame.prototype.getEqualScoreName = function() {
     return ['Love-All', 'Fifteen-All', 'Thirty-All'][this.m_score1] || 'Deuce';
 };
 
+TennisGame.prototype.getAdvantage = function(minusResult) {
+    if(minusResult === 1) {
+        return 'Advantage player1';
+    }
+    return 'Advantage player2';
+};
+
 TennisGame.prototype.getOverFour = function() {
     var minusResult = this.m_score1 - this.m_score2;
-    if (minusResult === 1) {
-        return 'Advantage player1';
-    } else if (minusResult === -1) {
-        return 'Advantage player2';
-    } else if (minusResult >= 2) {
+    if (minusResult === 1 || minusResult === -1) {
+        return this.getAdvantage(minusResult);
+    }
+    if (minusResult >= 2) {
         return 'Win for player1';
     }
     return 'Win for player2';
