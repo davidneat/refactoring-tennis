@@ -23,13 +23,13 @@ TennisGame.prototype.getWinnerName = function(minusResult) {
     return minusResult >= 2 ? 'Win for player1' : 'Win for player2';
 };
 
-TennisGame.prototype.isAdvantage = function(minusResult) {
-    return minusResult === 1 || minusResult === -1;
-};
-
 TennisGame.prototype.getOverFourName = function() {
     var minusResult = this.m_score1 - this.m_score2;
     return this.isAdvantage(minusResult) ? this.getAdvantageName(minusResult) : this.getWinnerName(minusResult);
+};
+
+TennisGame.prototype.isAdvantage = function(minusResult) {
+    return minusResult === 1 || minusResult === -1;
 };
 
 TennisGame.prototype.isOverFour = function() {
