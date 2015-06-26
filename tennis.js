@@ -1,10 +1,10 @@
 var TennisGame = function(player1Name, player2Name) {
-    this.m_score1 = 0;
+    this.scorePlayer1 = 0;
     this.m_score2 = 0;
 };
 
 TennisGame.prototype.wonPoint = function(playerName) {
-    playerName === "player1" ? this.m_score1 += 1 : this.m_score2 += 1;
+    playerName === "player1" ? this.scorePlayer1 += 1 : this.m_score2 += 1;
 };
 
 TennisGame.prototype.getScoreName = function(tempScore) {
@@ -12,7 +12,7 @@ TennisGame.prototype.getScoreName = function(tempScore) {
 };
 
 TennisGame.prototype.getEqualScoreName = function() {
-    return ['Love-All', 'Fifteen-All', 'Thirty-All'][this.m_score1] || 'Deuce';
+    return ['Love-All', 'Fifteen-All', 'Thirty-All'][this.scorePlayer1] || 'Deuce';
 };
 
 TennisGame.prototype.getAdvantageName = function(minusResult) {
@@ -24,7 +24,7 @@ TennisGame.prototype.getWinnerName = function(minusResult) {
 };
 
 TennisGame.prototype.getOverFourName = function() {
-    var minusResult = this.m_score1 - this.m_score2;
+    var minusResult = this.scorePlayer1 - this.m_score2;
     return this.isAdvantage(minusResult) ? this.getAdvantageName(minusResult) : this.getWinnerName(minusResult);
 };
 
@@ -33,11 +33,11 @@ TennisGame.prototype.isAdvantage = function(minusResult) {
 };
 
 TennisGame.prototype.isOverFour = function() {
-    return this.m_score1 >= 4 || this.m_score2 >= 4;
+    return this.scorePlayer1 >= 4 || this.m_score2 >= 4;
 };
 
 TennisGame.prototype.isEqualScore = function() {
-    return this.m_score1 === this.m_score2;
+    return this.scorePlayer1 === this.m_score2;
 };
 
 TennisGame.prototype.getScore = function() {
@@ -46,7 +46,7 @@ TennisGame.prototype.getScore = function() {
     } else if (this.isOverFour()) {
         return this.getOverFourName();
     }
-    return this.getScoreName(this.m_score1) + "-" + this.getScoreName(this.m_score2);
+    return this.getScoreName(this.scorePlayer1) + "-" + this.getScoreName(this.m_score2);
 };
 
 export default TennisGame;
