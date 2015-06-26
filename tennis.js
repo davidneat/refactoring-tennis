@@ -31,22 +31,14 @@ TennisGame.prototype.getOverFour = function(score) {
 
 TennisGame.prototype.getScore = function() {
     var score = "";
-    var tempScore = 0;
     if (this.m_score1 === this.m_score2) {
         score = this.getEqualScoreName();
     } else if (this.m_score1 >= 4 || this.m_score2 >= 4) {
         score = this.getOverFour();
     } else {
-        for (var i = 1; i < 2; i++) {
-            if (i === 1) tempScore = this.m_score1;
-            else {
-                score += "-";
-                tempScore = this.m_score2;
-            }
-            score = this.getScoreName(this.m_score1);
-            score += "-";
-            score += this.getScoreName(this.m_score2);
-        }
+        score = this.getScoreName(this.m_score1);
+        score += "-";
+        score += this.getScoreName(this.m_score2);
     }
     return score;
 };
