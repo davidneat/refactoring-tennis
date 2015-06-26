@@ -20,10 +20,7 @@ TennisGame.prototype.getAdvantageName = function(minusResult) {
 };
 
 TennisGame.prototype.getWinnerName = function(minusResult) {
-    if (minusResult >= 2) {
-        return 'Win for player1';
-    }
-    return 'Win for player2';
+    return minusResult >= 2 ? 'Win for player1' : 'Win for player2';
 };
 
 TennisGame.prototype.isAdvantage = function(minusResult) {
