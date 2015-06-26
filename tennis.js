@@ -32,9 +32,13 @@ TennisGame.prototype.getWinner = function(minusResult) {
     return 'Win for player2';
 };
 
+TennisGame.prototype.isAdvantage = function(minusResult) {
+    return minusResult === 1 || minusResult === -1;
+};
+
 TennisGame.prototype.getOverFour = function() {
     var minusResult = this.m_score1 - this.m_score2;
-    if (minusResult === 1 || minusResult === -1) {
+    if (this.isAdvantage(minusResult)) {
         return this.getAdvantage(minusResult);
     }
     return this.getWinner(minusResult);
