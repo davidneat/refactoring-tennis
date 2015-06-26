@@ -23,15 +23,13 @@ TennisGame.prototype.getEqualScoreName = function() {
 TennisGame.prototype.getOverFour = function(score) {
     var minusResult = this.m_score1 - this.m_score2;
     if (minusResult === 1) {
-        score = "Advantage player1";
+        return 'Advantage player1';
     } else if (minusResult === -1) {
-        score = "Advantage player2";
+        return 'Advantage player2';
     } else if (minusResult >= 2) {
-        score = "Win for player1";
-    } else {
-        score = "Win for player2";
+        return 'Win for player1';
     }
-    return score;
+    return 'Win for player2';
 };
 
 TennisGame.prototype.getScore = function() {
