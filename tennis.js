@@ -38,10 +38,7 @@ TennisGame.prototype.isAdvantage = function(minusResult) {
 
 TennisGame.prototype.getOverFour = function() {
     var minusResult = this.m_score1 - this.m_score2;
-    if (this.isAdvantage(minusResult)) {
-        return this.getAdvantage(minusResult);
-    }
-    return this.getWinner(minusResult);
+    return this.isAdvantage(minusResult) ? this.getAdvantage(minusResult) : this.getWinner(minusResult);
 };
 
 TennisGame.prototype.getScore = function() {
