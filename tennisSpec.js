@@ -42,9 +42,9 @@ var allScores = [
     [14, 16, "Win for player2"]
 ];
 
-function incrementScore(game, player, amount) {
+function incrementScore(player, amount) {
     for(let i = 0; i < amount; i++) {
-        game.wonPoint(player);
+        player.incrementScore();
     }
 }
 
@@ -53,8 +53,8 @@ describe('Tennis', () => {
         it(score[2], () => {
             let game = new TennisGame();
 
-            incrementScore(game, 'player1', score[0]);
-            incrementScore(game, 'player2', score[1]);
+            incrementScore(game.player1, score[0]);
+            incrementScore(game.player2, score[1]);
 
             assert.equal(score[2], game.getScore());
         });

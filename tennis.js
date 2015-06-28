@@ -15,10 +15,6 @@ var TennisGame = function() {
     this.player2 = new Player();
 };
 
-TennisGame.prototype.wonPoint = function(playerName) {
-    playerName === "player1" ? this.player1.incrementScore() : this.player2.incrementScore();
-};
-
 TennisGame.prototype.getScoreName = function(scorePlayer) {
     return ['Love', 'Fifteen', 'Thirty', 'Forty'][scorePlayer];
 };
