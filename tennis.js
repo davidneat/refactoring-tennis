@@ -1,10 +1,14 @@
+var Player = function() {
+    this.score = 0;
+};
+
 var TennisGame = function() {
-    this.scorePlayer1 = 0;
-    this.scorePlayer2 = 0;
+    this.player1 = new Player();
+    this.player2 = new Player();
 };
 
 TennisGame.prototype.wonPoint = function(playerName) {
-    playerName === "player1" ? this.scorePlayer1 += 1 : this.scorePlayer2 += 1;
+    playerName === "player1" ? this.player1.score += 1 : this.player2.score += 1;
 };
 
 TennisGame.prototype.getScoreName = function(scorePlayer) {
@@ -12,7 +16,7 @@ TennisGame.prototype.getScoreName = function(scorePlayer) {
 };
 
 TennisGame.prototype.getEqualScoreName = function() {
-    return ['Love-All', 'Fifteen-All', 'Thirty-All'][this.scorePlayer1] || 'Deuce';
+    return ['Love-All', 'Fifteen-All', 'Thirty-All'][this.player1.score] || 'Deuce';
 };
 
 TennisGame.prototype.getAdvantageName = function(minusResult) {
@@ -24,7 +28,7 @@ TennisGame.prototype.getWinnerName = function(minusResult) {
 };
 
 TennisGame.prototype.getOverFourName = function() {
-    var minusResult = this.scorePlayer1 - this.scorePlayer2;
+    var minusResult = this.player1.score - this.player2.score;
     return this.isAdvantage(minusResult) ? this.getAdvantageName(minusResult) : this.getWinnerName(minusResult);
 };
 
@@ -33,11 +37,11 @@ TennisGame.prototype.isAdvantage = function(minusResult) {
 };
 
 TennisGame.prototype.isOverFour = function() {
-    return this.scorePlayer1 >= 4 || this.scorePlayer2 >= 4;
+    return this.player1.score >= 4 || this.player2.score >= 4;
 };
 
 TennisGame.prototype.isEqualScore = function() {
-    return this.scorePlayer1 === this.scorePlayer2;
+    return this.player1.score === this.player2.score;
 };
 
 TennisGame.prototype.getScore = function() {
@@ -46,7 +50,7 @@ TennisGame.prototype.getScore = function() {
     } else if (this.isOverFour()) {
         return this.getOverFourName();
     }
-    return this.getScoreName(this.scorePlayer1) + "-" + this.getScoreName(this.scorePlayer2);
+    return this.getScoreName(this.player1.score) + "-" + this.getScoreName(this.player2.score);
 };
 
 export default TennisGame;
