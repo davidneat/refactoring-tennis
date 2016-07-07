@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/davidneat/refactoring-tennis.git"
+    "url": "https://github.com/davidspinat/refactoring-tennis.git"
   },
   "keywords": [
     "Refactoring"
@@ -19,9 +19,9 @@
   "author": "davidspinat",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/davidneat/refactoring-tennis/issues"
+    "url": "https://github.com/davidspinat/refactoring-tennis/issues"
   },
-  "homepage": "https://github.com/davidneat/refactoring-tennis#readme",
+  "homepage": "https://github.com/davidspinat/refactoring-tennis#readme",
   "devDependencies": {
     "babel-core": "^5.6.7",
     "http-server": "^0.8.0",
